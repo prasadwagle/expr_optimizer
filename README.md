@@ -5,6 +5,8 @@ Determines pre-filters for boolean expressions
 
 Pseudo-code:
 
+<pre>
+<code>
 abstract class Expr
 case class Lit(value: Boolean) extends Expr
 case class Var(name: String) extends Expr
@@ -22,3 +24,5 @@ val cnf = convertExprCNFToCNF(orDistributedOverAndExpr)
 val cheapCnf = cnf.filter(expr => cheapExpr(expr))
 val preFilterExpr = cnfToExpr(cheapCnf)
 val output = printExpr(prevalExpr)
+</code>
+</pre>
