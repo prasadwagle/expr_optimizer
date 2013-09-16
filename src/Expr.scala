@@ -63,13 +63,13 @@ object ExprOptimizer {
 
   def convertToCNF(expr: Expr): CNF = {
     val removeLiteralsExpr = removeLiterals(expr)
-    println(removeLiteralsExpr)
+    //println(removeLiteralsExpr)
     val negationsInExpr = negationsIn(removeLiteralsExpr)
-    println(negationsInExpr)
+    //println(negationsInExpr)
     val orDistributedOverAndExpr = orDistributedOverAnd(negationsInExpr)
-    println(orDistributedOverAndExpr)
+    //println(orDistributedOverAndExpr)
     val cnf = convertExprCNFToCNF(orDistributedOverAndExpr)
-    println(cnf)
+    //println(cnf)
     return cnf
   }
 
@@ -149,8 +149,9 @@ object ExprOptimizer {
 
   def main(args: Array[String]) {
     for( ln <- io.Source.stdin.getLines ) {
-      println("Input: " + ln)
-      println("Output: " + exprStrToPrevalStr(ln) )
+      //println("Input: " + ln)
+      //println("Output: " + exprStrToPrevalStr(ln) )
+      println(exprStrToPrevalStr(ln) )
     }
   }
 }
